@@ -1,0 +1,6 @@
+#!/bin/bash
+versions=`curl -s https://www.python.org/downloads/ | grep 'release' | awk '/span.*Python /{print $4}' | awk -F '<' '{print $1}' | sort -r`
+
+for v in $versions; do
+   echo '-->'$v
+done
