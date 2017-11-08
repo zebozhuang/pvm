@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function download() {
+    wget $1
+}
+
+download https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
+
+
