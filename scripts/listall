@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#. "$PVM_ROOT/scripts/functions"
+
+function show_usage() {
+    echo "Usage: pvm listall [options]"
+    echo "    -a, --all           List all tags."
+    echo "    -h, --help          Display this message."
+}
+
+function read_command_line() {
+    for i in "$@"; do
+        case $i in
+            -a|--all)
+                tag_filter=""
+            ;;
+            -h|--help)
+                show_usage
+                exit 0
+            ;;
+            *)
+                echo "Invalid option $i"
+                show_usage
+                exit 65 # Bad arguments
+            ;;
+        esac
+    done
+}
+
+read_command_line "$@"
+
+echo
+
+echo
